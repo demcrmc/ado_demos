@@ -1,0 +1,15 @@
+C:\Users\FOR CLONE\source\repos\ado_demos\bin\Debug\ado_demos.exe.config
+C:\Users\FOR CLONE\source\repos\ado_demos\bin\Debug\ado_demos.exe
+C:\Users\FOR CLONE\source\repos\ado_demos\bin\Debug\ado_demos.pdb
+C:\Users\FOR CLONE\source\repos\ado_demos\bin\Debug\EntityFramework.dll
+C:\Users\FOR CLONE\source\repos\ado_demos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\FOR CLONE\source\repos\ado_demos\bin\Debug\EntityFramework.xml
+C:\Users\FOR CLONE\source\repos\ado_demos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\FOR CLONE\source\repos\ado_demos\obj\Debug\ado_demos.csproj.AssemblyReference.cache
+C:\Users\FOR CLONE\source\repos\ado_demos\obj\Debug\ado_demos.Form1.resources
+C:\Users\FOR CLONE\source\repos\ado_demos\obj\Debug\ado_demos.Properties.Resources.resources
+C:\Users\FOR CLONE\source\repos\ado_demos\obj\Debug\ado_demos.csproj.GenerateResource.cache
+C:\Users\FOR CLONE\source\repos\ado_demos\obj\Debug\ado_demos.csproj.CoreCompileInputs.cache
+C:\Users\FOR CLONE\source\repos\ado_demos\obj\Debug\ado_demos.csproj.CopyComplete
+C:\Users\FOR CLONE\source\repos\ado_demos\obj\Debug\ado_demos.exe
+C:\Users\FOR CLONE\source\repos\ado_demos\obj\Debug\ado_demos.pdb
