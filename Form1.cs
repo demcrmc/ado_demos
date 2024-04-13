@@ -14,6 +14,7 @@ namespace ado_demos
     public partial class Form1 : Form
     {
         AmitJBDEntities _context = new AmitJBDEntities();
+        private int SelectedCategoryId; 
         public Form1()
         {
             InitializeComponent();
@@ -27,39 +28,46 @@ namespace ado_demos
             categoryBindingSource.DataSource = result;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            Category newCategory = new Category();
-            newCategory.CategoryName = textBox1.Text.Trim();
+            frmCategoryAdd addForm = new frmCategoryAdd();
+            addForm.ShowDialog();
 
-            _context.Categories.Add(newCategory);
-            _context.SaveChanges();
-
-            categoryBindingSource.DataSource = _context.Categories.ToList();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            string searchText = textBox2.Text.Trim();
-
-            var result = _context.Categories
-                        .Where(q => q.CategoryName.Contains(searchText))
-                        .ToList();
+            var result = _context.Categories.ToList();
 
             categoryBindingSource.DataSource = result;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            string toBeDeleted = textBox3.Text.Trim();
-            var itemToDelete = _context.Categories
-                                .Where(q => q.Id.ToString() == toBeDeleted)
-                                .FirstOrDefault();
+            if (dataGridView1.SelectedRows.Count == 0)
+                return;
 
-            _context.Categories.Remove(itemToDelete);
-            _context.SaveChanges();
-
-            categoryBindingSource.DataSource = _context.Categories.ToList();
+            SelectedCategoryId = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            updateCategory form = new updateCategory(SelectedCategoryId, categoryBindingSource);
+            form.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this row?", "Confirmation", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    int selectedIndex = dataGridView1.SelectedRows[0].Index;
+                    dataGridView1.Rows.RemoveAt(selectedIndex);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to delete.");
+            }
+        }
+        
     }
 }
